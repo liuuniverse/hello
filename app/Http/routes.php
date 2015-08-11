@@ -23,6 +23,9 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
 	Route::get('/','AdminHomeController@index');
 	Route::resource('pages','PagesController');
 });
+Route::get('auth/login','Auth/AuthController@getLogin');
+Route::post('auth/logn','Auth/AuthController@postLogin');
+Route::get('auth/logout','Auth/AuthController@getLogout');
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
